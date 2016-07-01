@@ -49,3 +49,14 @@ console.log(3 + undefined);
 console.log(3 + null);
 
 console.log(parseFloat("NaN")); // torna NaN
+
+//funciones y ambito
+
+console.log("\n\Ambito (Scope)");
+var x=-4;
+console.log(x);
+console.log(yy);
+if(x>0){
+    var yy=6;
+}
+console.log(yy);
