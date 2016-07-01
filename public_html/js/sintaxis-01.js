@@ -21,3 +21,31 @@ console.log(str[0] + " " + str[6]); // solo escribe la 1 letra  y la 6
 str[6]="a"; // lo deja igual, no se puede sustituir
 console.log(str[0] + " " + str[6]);
 
+//objecte
+var r={
+    a:3,
+    b:5,
+    c:"hola"
+};
+console.log(r);
+// acces a components de un objeto como objeto
+console.log(r.a + "\n" + r.b + "\n" + r.c[3]); 
+// acceso a componentes de un objeto como array
+console.log(r['a'] + "\n" + r['b'] + "\n" + r['c'][3]); 
+
+
+// array
+var s=[3,5,"hola"];
+console.log(s);
+console.log(s[0]+ "\n" + s[1] + "\n" + s[2][3]);
+
+// añadir una ppropiedad a r
+r.d="que bien me lo paso";
+console.log(r);
+
+console.log("PI = " + Math.PI);
+
+console.log(3 + undefined);
+console.log(3 + null);
+
+console.log(parseFloat("NaN")); // torna NaN
