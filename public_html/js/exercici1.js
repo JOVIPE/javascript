@@ -88,7 +88,7 @@ min=x[0];
 med=x[0];
 for (i=1;i<x.length;i++) {
 	if (x[i]<min) min=x[i];
-	if (x[i]>max) max=x[i];
+	else if (x[i]>max) max=x[i];
 	med += x[i];
 }
 med /=x.length;
@@ -127,10 +127,12 @@ console.log("-------------------------------------------------------------------
 
 // 09
 var x= [4, 9, 6, 1, 7, 8, 5, 3, 0, 2];
-var y= new Array();
+var y= new Array(); // puede ser y=[]
 var c=4;
 for (i=0;i<x.length;i++) {
-	if (x[i]<=c) y[y.length]=x[i];
+	if (x[i]<=c) {
+            y[y.length]=x[i]; // añade nuevo componente al final
+        }
 }
 console.log("-------------------------------");
 console.log("9. Crea una rutina que donat un array v, copiï en un altre vector v2 les components que tinguin un valor més petit o igual que 4. Cas v = (4, 9, 6, 1, 7, 8, 5, 3, 0, 2).");
@@ -145,7 +147,7 @@ console.log("La palabra \""+ palabra + "\" tiene  "+ longitud +" caracteres.");
 
 // 11
 console.log("-------------------------------");
-console.log("11. Crea una rutina que calculi el signo de l'horòscop a partir del dia i del mes de naixement.")
+console.log("11. Crea una rutina que calculi el signo de l'horòscop a partir del dia i del mes de naixement.");
 var dia,mes,signo;
 dia=3;
 mes=6;
@@ -204,7 +206,7 @@ posicion=0;
 minimo=0;
 pasos = 0;
 console.log("-------------------------------");
-console.log("12. Crea una rutina que donat un array v, l'ordeni de menys a més amb l'algorisme de bombolla.Cas v = (4, 9, 6, 1, 7, 8, 5, 3, 0, 2).")
+console.log("12. Crea una rutina que donat un array v, l'ordeni de menys a més amb l'algorisme de bombolla.Cas v = (4, 9, 6, 1, 7, 8, 5, 3, 0, 2).");
 console.log("Antes v = (" + v + ")");
 for (i = 0; i < v.length-1; i++) {
     // recorremos el vector y buscamos la maás pequeña
@@ -233,7 +235,7 @@ var v1=[1,2,3,4];
 var v2=new Array(4,3,2,1);
 var productoescalar=0;
 if (v1.length!==v2.length) {
-	productoescalar="No se puede hacer el calculo, tienen longitudes distintas."
+	productoescalar="No se puede hacer el calculo, tienen longitudes distintas.";
 }else {
 	for (i=0; i<v1.length;i++) { productoescalar+=v1[i]*v2[i];}	
     }
@@ -268,6 +270,9 @@ for (i=0; i<v.length;i++) {
 	if (v[i]===x) break;
 }
 var posicion= i<v.length? "està a la posició " + i: x + " no se encuentra";
+console.log("-------------------------------");
+console.log("14. Crea una rutina que retorni la posició de la primera aparició d'un nombre en una matriu d'enters. Cas x = 5 per al vector v = (4, 9, 6, 5, 7, 8, 5, 3, 0, 2).");
+console.log("v = (" + v + "), Primera aparición del número  " + x + " " + posicion); 
  */
 
 // 15
@@ -390,19 +395,19 @@ var letra= "TRWAGMYFPDXBNJZSQVHLCKEO";
 dni= dni.toUpperCase();
 try {
 	if (dni.length>9) throw "Longitud del DNI/NIE incorrecta";
-	dni= dni.toUpperCase();
 	// verificar caràcters
-	if(isNaN(parseInt(dni[0])) && dni[0]!="X" && dni[0]!="Y") throw "El DNI/NIE empieza por X, Y o 0-9.";
+	if(isNaN(parseInt(dni[0])) && dni[0]!=="X" && dni[0]!=="Y" && dni[0]!=="Z") throw "El DNI/NIE empieza por X, Y , Z o 0-9.";
 	if (!isNaN(parseInt(dni[0]))) aux = dni.substring(0,8);
-	else if(dni[0]=="X")	aux = "0" + dni.substring(1,8);
-	else aux = "1" + dni.substring(1,8); // comença per Y
-	// comprovem tots els caràcters d'aux són nombre
+	else if (dni[0]==="X")	aux = "0" + dni.substring(1,8); // empieza por X
+        else if (dni[0]==="y")	aux = "1" + dni.substring(1,8); // empieza por Y
+	else aux = "2" + dni.substring(1,8); // empieza por Z
+	// comprobamos los caracteres de 2 a 8 sean números
 	for (i=0;i<aux.length;i++) {
 		if(isNaN(parseInt(aux[i]))) throw "Las cifras de la posición 2 a 8 tienen que ser numericas.";
-	}
-	// aux és un string --> convertir a nombre sencer
+            }
+	// aux és un string --> convertir a numero entero
 	aux= parseInt(aux);	
-	if(dni[dni.length-1] !== letra[aux%23]) throw "La letra és incorrecta."		
+	if(dni[dni.length-1] !== letra[aux%23]) throw "La letra és incorrecta."	;	
 	mensage = "El DNI/NIE " + dni + " és correcto.";
 }catch (e) {
 	mensage = "Formato incorecto. " + e;
@@ -414,7 +419,7 @@ console.log(mensage);
 
 // 20
 //20. Escriu una funció segons les següents característiques
-// Nom: iterarArray
+// Nom: seguirArray
 // Paràmetres d'entrada: variable "a" que és un array,
 // Sortida: un array amb les següents components en aquest ordre: valor màxim,
 //mínim, un import total, valor mitjà i desviació estàndard calculada com:
@@ -435,13 +440,13 @@ var resultado;
 console.log("-------------------------------");
 console.log("20. Escriu una funció segons les següents característiques");
 try {
-	resultado = iterarArray(x);
+	resultado = seguirArray(x);
 	console.log("x = (" + x + "). Resultado = (" + resultado + ") (máximo, mínimo, total, media ,desviacion estàndard)");
 }catch (e) {
 	console.log(" Error. " + e);
 }
 
-function iterarArray(a) {
+function seguirArray(a) {
 	if(!Array.isArray(a)) throw "No es un array.";
 	
 	var z= new Array(
@@ -484,7 +489,7 @@ try {
         return suma + (valor - resultat[3])*(valor - resultat[3]);
     }) / x.length);
     
-	resultat = iterarArray(x);
+	resultat = seguirArray(x);
 	console.log("20. x = (" + x + "). Resultats = (" + resultat + ") màxim, mínim, suma, mitjana i desviació estàndard");
 }catch (e) {
 	console.log("20. Error. " + e);
