@@ -426,7 +426,7 @@ console.log(mensage);
 //Σ(𝑥𝑖 − 𝑥̅)2
 //𝑁
 //𝑖=1
-// Si el paràmetre d'entrada no és un array retornarà un missatge d'error.
+// Si el paràmetre d'entrada no és un array retornarà un mensage d'error.
 // Mostrar el resultat com un string a la consola.
 // Aplicar a l'array (15, -25, 3, 48, 65, 32, -8, -14, 5, 32)
 
@@ -469,7 +469,6 @@ function iterarArray(a) {
 
 /*
 x = [15, -25, 3, 48, 65, 32, -8, -14, 5, 32];
-//var x=3;
 var resultat, resultat;
 try {
     if(!Array.isArray(x)) throw "No heu passat un array.";
@@ -512,31 +511,34 @@ try {
 // Un nombre real si en té 1
 //i. Es compleix que a =0
 //ii. x = –c/b.
-// un missatge d'error si no té solucions reals
+// un mensage d'error si no té solucions reals
 //i. Es compleix que b2-4ac<0
 
 var a,b,c;
-var missatge;
+var mensage;
+console.log("-------------------------------");
+console.log("21. Crea una funció que resolgui una equació de segon grau.");
 try {
-	a=2; b=3; c=-2; // Sol 2,-8
-	//a=0; b=3; c=2; // Sol -1.5
-	//a=4; b=3; c=2; // No té sols reals
-	missatge = resoldreEquacioSegonGrau(a,b,c);
-	console.log("21. Equació; a= " + a + ", b = " + b + ", c = " + c + ". Solució: " + missatge);
+	//a=0,b=1,c=2; //solucion -2
+        a=2; b=4; c=-6;// Solución 1,-3
+	//a=1; b=2; c=1; // Solución doble 1
+	//a=2; b=2; c=1; // Sin soluciones reales
+	mensage = ecuacion(a,b,c);
+	console.log("Ecuación: a= " + a + ", b = " + b + ", c = " + c + ". Solución: " + mensage);
 }catch (e) {
-	console.log("21. Equació; a= " + a + ", b = " + b + ", c = " + c + ". " + e);
+	console.log("Ecuación: a= " + a + ", b = " + b + ", c = " + c + ". " + e);
 }
-function resoldreEquacioSegonGrau(a, b, c) {
-    var disc;
+function ecuacion(a, b, c) {
+    var calculo;
     if (a === 0)
-        return -b / c;
-    disc = b * b - 4 * a * c;
-    if (disc < 0)
-        throw "Aquesta equació no té solucions reals.";
+        return -c / b;
+    calculo = (b * b) - (4 * a * c);
+    if (calculo < 0)
+        throw "Ecuacion sin soluciones reales.";
     else {
         return new Array(
-            (-b + Math.sqrt(disc)) / 2 * a,
-            (-b - Math.sqrt(disc)) / 2 * a
+            (-b + Math.sqrt(calculo)) / (2 * a),
+            (-b - Math.sqrt(calculo)) / (2 * a)
         );
     }
 
@@ -545,10 +547,10 @@ function resoldreEquacioSegonGrau(a, b, c) {
 // alternativa
 var a,b,c,sol;
 a=2; b=3; c=-2;
-sol=resoldreEquacioSegonGrau_2(a,b,c);
+sol=ecuacion_2(a,b,c);
 console.log("21. " + sol);
 
-function resoldreEquacioSegonGrau_2(a,b,c) {
+function ecuacion_2(a,b,c) {
     if (a == 0)
         return -c / b;
     var disc = b * b - 4 * a * c;
@@ -556,8 +558,8 @@ function resoldreEquacioSegonGrau_2(a,b,c) {
         return "L'equació no té solucions reals";
     else {
         return [
-            (-b + Math.sqrt(disc)) / 2 * a,
-            (-b - Math.sqrt(disc)) / 2 * a
+            (-b + Math.sqrt(disc)) / (2 * a),
+            (-b - Math.sqrt(disc)) / (2 * a)
         ];
     }
 }
