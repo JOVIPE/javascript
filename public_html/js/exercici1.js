@@ -525,9 +525,11 @@ console.log("-------------------------------");
 console.log("21. Crea una funció que resolgui una equació de segon grau.");
 try {
 	//a=0,b=1,c=2; //solucion -2
-        a=2; b=4; c=-6;// Solución 1,-3
+        // a=2; b=4; c=-6;// Solución 1,-3
 	//a=1; b=2; c=1; // Solución doble 1
 	//a=2; b=2; c=1; // Sin soluciones reales
+        a=2,b=3,c=-2; //0.5,-2
+       // a=4,b=3,c=2; //Sin soluciones reales
 	mensage = ecuacion(a,b,c);
 	console.log("Ecuación: a= " + a + ", b = " + b + ", c = " + c + ". Solución: " + mensage);
 }catch (e) {
