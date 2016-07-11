@@ -332,12 +332,12 @@ console.log("6. Crea una classe per gestionar una agenda que fa servir la llista
         this.afegirEntrada = function (nom, cognom, telefon) {
             this.llista[this.llista.length] = new entradaAgenda(nom, cognom, telefon);
         };
-        // funcions auxiliars de cerca
+        // funciones auxiliares de busqueda
         this.cercarId = function (id) {
             var i;
             for (i = 0; i < this.llista.length; i++) {
                 if (this.llista[i].id === id)
-                    return [i, this.llista[i]]; //torno un array posició, valor
+                    return [i, this.llista[i]]; //devuelve un array posicion valor
             }
             throw "La entrada amb id " + id + " no existeix";
         };
@@ -395,10 +395,10 @@ console.log("6. Crea una classe per gestionar una agenda que fa servir la llista
         NuevaAgenda.afegirEntrada("Ana", "Ana@gmail.com", "999999999");
         NuevaAgenda.afegirEntrada("Jose", "Jose@hotmail.com", "616163616");
         console.log("\n" + NuevaAgenda);
-        console.log("" + NuevaAgenda.cercarDadesNom("Jose"));
-        console.log("" + NuevaAgenda.cercarDadesId(1));
+        console.log("Buscar datos nombre " + NuevaAgenda.cercarDadesNom("Jose"));
+        console.log("buscar datos id " + NuevaAgenda.cercarDadesId(1));
         NuevaAgenda.eliminarEntrada(2);
-        console.log("" + NuevaAgenda);
+        console.log("Eliminado el id 2 " + NuevaAgenda);
     } catch (e) {
         console.log(e);
     }   
