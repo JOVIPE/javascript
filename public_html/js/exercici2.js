@@ -237,7 +237,7 @@ console.log("Fecha después de añadir 2 meses y 6 dies a la fecha de hoy:" + fe
     while(primitiva.length<n) {
         aleatorio= 1+ Math.round(48*Math.random());
         if (primitiva.indexOf(aleatorio)===-1) { 
-            // no trobat --> l'afegim a la llista
+            // no encontrado --> se añade en la lista
             primitiva[primitiva.length]=aleatorio;
         }	
     }
@@ -251,7 +251,7 @@ console.log("Fecha después de añadir 2 meses y 6 dies a la fecha de hoy:" + fe
  console.log("Numeros de la primitiva: " + primitiva());
  
 
- // 9. Escriu una funció que torni en un array els nombres necessaris per omplir una quiniela de   forma aleatòria.
+ // 9. Escriu una funció que torni en un array els nombres necessaris per omplir una quiniela de forma aleatòria.
 function quiniela() {
     var quiniela = new Array();
     var n = 15; // numero de reusltados
