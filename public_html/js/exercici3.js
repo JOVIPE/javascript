@@ -195,7 +195,7 @@ console.log("4. Escriu una classe rellotge digital amb hores, minutos i segundos
                 if (isNaN(this.segundos) || this.segundos < 0 || this.segundos > 59)
                     throw "El formato de segundos es incorrecto";
             } else if (arguments.length === 1) {
-                var hms = arguments[0].match(/([01]\d|2[0-3]):([0-5]\d):([0-5]\d)/);
+                var hms = arguments[0].match(/([01]\d|2[0-3]):([0-5]\d):([0-5]\d)/);  // si queremos ademas que coja 09 o 9 sería /([01]?\d|2[0-3]):([0-5]?\d):([0-5]?\d)/
                 if (hms === null)
                     throw "El formato del string con la hora(h:m:s) es erroneo";
                 else {
