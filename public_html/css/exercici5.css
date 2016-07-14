@@ -24,7 +24,7 @@ h1{
     border-style: solid;
     background-color:  aquamarine;
     background-image: linear-gradient(to bottom, #feffff 0%,aquamarine 100%);
-    box-shadow: 10px 10px 5px gold;
+    box-shadow: 10px 10px 5px grey;
 }
 #pantalla{
     border-color: blue;
@@ -32,11 +32,11 @@ h1{
     border-style: solid;
     padding: 1rem;
     text-align: right;
-    text-align-last: right;
+    /*text-align-last: right;*/
     color: greenyellow;
     background-color: black;
     width: 22rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-family: 'Share Tech Mono', monospace;
     margin-bottom: 0.7rem;
     
@@ -58,6 +58,7 @@ li{
 li:nth-of-type(21){
     /* tecla 0 */
     width: 7.9rem;
+    color: red;
 }
 li:nth-of-type(5n+1){
     margin-left: 0px;
