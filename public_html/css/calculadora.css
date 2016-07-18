@@ -1,0 +1,69 @@
+@charset "UTF-8";
+@import url(http://fonts.googleapis.com/css?family=Nova+Mono);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    line-height: 1.5rem;
+    color: black;
+    margin: 2rem;    
+}
+h1{
+    text-align: center;
+    font-size: 2rem;
+    color: cadetblue;
+    margin-bottom: 2rem;
+}
+#calculadora{
+    width: 20rem;
+    height: 20rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-color: cadetblue;
+    border-width: 0.1rem;
+    border-style: solid;
+    background-color: #f0f9ff;
+    background-image: linear-gradient(to bottom, #feffff 0%,#a9bace 100%);
+}
+#pantalla{
+    border-color: cadetblue;
+    border-width: 0.1rem;
+    border-style: solid;
+    padding: 1rem;
+    text-align: right;
+    text-align-last: right;
+    color: greenyellow;
+    background-color: black;
+    width: 18rem;
+    font-size: 1.5rem;
+    font-family: 'Nova Mono', monospace;
+    margin-bottom: 0.7rem;
+}
+li{
+    cursor: pointer;
+    text-align: center;
+    padding: 0.4rem;
+    width: 2.5rem;
+    margin: 0.35rem;
+    border-color: cadetblue;
+    border-width: 0.1rem;
+    border-style: solid;
+    background-color: #f0f9ff;
+    background-image: linear-gradient(to bottom, #feffff 0%,#a9bace 100%);
+    float: left;
+    border-radius: 0.3rem;
+}
+li:nth-of-type(21){
+    /* tecla 0 */
+    width: 6.7rem;
+}
+li:nth-of-type(5n+1){
+    margin-left: 0px;
+}
+li:nth-of-type(5n){
+    margin-right: 0px;
+}
+li:hover{
+    box-shadow: inset 0px 0px 3px 3px #AD5F5F;
+}
+
